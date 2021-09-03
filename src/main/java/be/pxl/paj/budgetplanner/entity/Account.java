@@ -1,14 +1,22 @@
 package be.pxl.paj.budgetplanner.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Account {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String iban;
 	private String firstName;
 	private String name;
+	@OneToMany
 	private List<Payment> payments = new ArrayList<>();
 
 	public Account() {

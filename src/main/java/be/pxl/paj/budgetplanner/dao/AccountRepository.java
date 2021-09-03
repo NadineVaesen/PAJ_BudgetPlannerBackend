@@ -1,11 +1,13 @@
 package be.pxl.paj.budgetplanner.dao;
 
 import be.pxl.paj.budgetplanner.entity.Account;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AccountRepository {
+public interface AccountRepository extends JpaRepository<Account, Long> {
 
 	// REMOVE IF NECESSARY
-	void save(Account account);
+//	void save(Account account);
+    Account findAccountByIban(String iban);
 }
